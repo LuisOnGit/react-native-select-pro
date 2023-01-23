@@ -1,20 +1,23 @@
 import React from 'react';
 import { Select } from '@mobile-reality/react-native-select-pro';
 
-import { SafeAreaViewWrapper } from '../components/SafeAreaViewWrapper';
-import { SECTIONS_DATA } from '../constants';
+import { SafeAreaViewWrapper } from '../components/safe-area-view-wrapper';
+import { SECTIONS_DATA } from '../constants/data';
 
 export const Sections = () => {
     return (
         <SafeAreaViewWrapper>
             <Select
-                sectionHeaderContainerStyle={{ backgroundColor: 'lightblue' }}
-                sectionHeaderTextStyle={{
-                    color: 'darkblue',
+                styles={{
+                    sectionHeader: {
+                        container: {
+                            backgroundColor: 'lightblue',
+                        },
+                        text: { color: 'darkblue' },
+                    },
                 }}
                 options={SECTIONS_DATA}
                 sectionListProps={{ bounces: true }}
-                selectControlStyle={{ width: 200 }}
             />
         </SafeAreaViewWrapper>
     );
